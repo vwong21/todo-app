@@ -1,0 +1,21 @@
+{
+  "name": "todo_list",
+  "version": "0.0.1",
+  "description": "dummy app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dev:watch": "npx electronmon --trace-warning ."
+  },
+  "keywords": [
+    "electron",
+    "reactjs",
+    "typescript"
+  ],
+  "author": "Vincent",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^32.2.0"
+  }
+}

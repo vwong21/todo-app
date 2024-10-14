@@ -7,6 +7,11 @@ function createMainWindow() {
         title: 'Electron',
         width: 1000,
         height: 600,
+        webPreferences: {
+            contextIsolation: true,
+            nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js')
+        }
     })
 
     mainWindow.webContents.openDevTools()

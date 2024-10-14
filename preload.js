@@ -1,4 +1,4 @@
-const {contextBridge} = require('electron')
+const {contextBridge, ipcRenderer} = require('electron')
 const os = require('os')
 
 contextBridge.exposeInMainWorld('electron', {
@@ -7,3 +7,9 @@ contextBridge.exposeInMainWorld('electron', {
     arch: () => os.arch()
 }
 )
+
+contextBridge.exposeInMainWorld('ipcRenderer', {
+    send: (channel, data) => ipcRenderer.send(channel, data),
+    on: (channel, func) => 
+        ipcRenderer.on(channel, (event, ...args) => func(...args)),
+})
